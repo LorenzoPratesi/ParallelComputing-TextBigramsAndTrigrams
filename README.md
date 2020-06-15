@@ -31,6 +31,7 @@ ParallelComputingBenchmark.parallel2Grams               9  avgt    5  1,563 ± 0
 ParallelComputingBenchmark.parallel2Grams              10  avgt    5  1,562 ± 0,007  ms/op
 ParallelComputingBenchmark.parallel2Grams              11  avgt    5  1,609 ± 0,031  ms/op
 ParallelComputingBenchmark.parallel2Grams              12  avgt    5  1,693 ± 0,168  ms/op
+
 ParallelComputingBenchmark.parallel3Grams               1  avgt    5  5,736 ± 0,559  ms/op
 ParallelComputingBenchmark.parallel3Grams               2  avgt    5  3,547 ± 0,551  ms/op
 ParallelComputingBenchmark.parallel3Grams               3  avgt    5  2,945 ± 0,303  ms/op
