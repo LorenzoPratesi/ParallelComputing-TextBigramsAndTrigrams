@@ -1,0 +1,14 @@
+# JMH version: 1.23
+# VM version: JDK 11.0.4, OpenJDK 64-Bit Server VM, 11.0.4+10-b304.77
+# VM invoker: /Applications/IntelliJ IDEA.app/Contents/jbr/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=55815:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: lorenzopratesi.benchmarks.SequentialComputingBenchmark.sequential2Grams
+
+Benchmark                                      Mode  Cnt   Score    Error  Units
+SequentialComputingBenchmark.sequential2Grams  avgt    5  43,275 ±  2,327  ms/op
+SequentialComputingBenchmark.sequential3Grams  avgt    5  52,700 ± 12,552  ms/op

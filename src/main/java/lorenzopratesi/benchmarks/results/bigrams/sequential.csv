@@ -1,0 +1,7 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99,9%)","Unit","Param: files"
+"lorenzopratesi.benchmarks.SequentialComputingBenchmark.sequential2Grams","avgt",1,5,"4,331079","0,553142","ms/op",1-text50KB
+"lorenzopratesi.benchmarks.SequentialComputingBenchmark.sequential2Grams","avgt",1,5,"44,181290","5,685447","ms/op",2-text500KB
+"lorenzopratesi.benchmarks.SequentialComputingBenchmark.sequential2Grams","avgt",1,5,"803,001810","109,550594","ms/op",3-text10MB
+"lorenzopratesi.benchmarks.SequentialComputingBenchmark.sequential2Grams","avgt",1,5,"4015,975907","435,270077","ms/op",4-text50MB
+"lorenzopratesi.benchmarks.SequentialComputingBenchmark.sequential2Grams","avgt",1,5,"7910,065530","1584,250548","ms/op",5-text100MB
+"lorenzopratesi.benchmarks.SequentialComputingBenchmark.sequential2Grams","avgt",1,5,"12849,690238","1062,709014","ms/op",6-text150MB
