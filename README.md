@@ -6,7 +6,9 @@ Compute n-grams on txt file in sequential and parallel version. The process is s
 
 2. Study the different implementations through computational time and speed up, vary depending on number of threads in the parallel version. 
 
-The chosen languages is Java for the sequential version and the Java Thread for the parallel version. 
+The chosen languages is Java for the sequential version and the Java Thread for the parallel version.
+
+Notebook plots: https://github.com/LorenzoPratesi/ParallelComputing-TextBigramsAndTrigrams/tree/master/notebook
 
 ## Some Benchmarks on a 50kb txt file
 
@@ -40,3 +42,4 @@ ParallelComputingBenchmark.parallel3Grams               9  avgt    5  2,745 ± 0
 ParallelComputingBenchmark.parallel3Grams              10  avgt    5  2,765 ± 0,066  ms/op
 ParallelComputingBenchmark.parallel3Grams              11  avgt    5  2,915 ± 0,062  ms/op
 ParallelComputingBenchmark.parallel3Grams              12  avgt    5  2,980 ± 0,140  ms/op
+```
