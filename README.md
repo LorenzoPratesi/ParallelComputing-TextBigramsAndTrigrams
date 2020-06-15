@@ -24,16 +24,14 @@ Arguments:
   
 Usage: 
 	java TextBigramsAndTrigrams <name> -option <argument> [<optional-argument>]
-   
-Example: 
-	java TextBigramsAndTrigrams text.txt -p 3 8
-	java TextBigramsAndTrigrams text.txt -s 3
-	java TextBigramsAndTrigrams text.txt -s 2
-        java TextBigramsAndTrigrams text.txt -pprint 3 8
+
 ```
 ### Example
 ```
 java TextBigramsAndTrigrams text.txt -p 3 8
+java TextBigramsAndTrigrams text.txt -s 3
+java TextBigramsAndTrigrams text.txt -s 2
+java TextBigramsAndTrigrams text.txt -pprint 3 8
 ```
 
 ## Some Benchmarks on a 50kb txt file
