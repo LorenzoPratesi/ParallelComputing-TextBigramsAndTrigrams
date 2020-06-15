@@ -12,7 +12,8 @@ Notebook plots: https://github.com/LorenzoPratesi/ParallelComputing-TextBigramsA
 
 ## Some Benchmarks on a 50kb txt file
 
-``` Benchmark                                      Mode  Cnt  Score   Error  Units
+``` 
+Benchmark                                      Mode  Cnt  Score   Error  Units
 SequentialComputingBenchmark.sequential2Grams  avgt    5  4,217 ± 0,152  ms/op
 SequentialComputingBenchmark.sequential3Grams  avgt    5  4,639 ± 0,141  ms/op
 
