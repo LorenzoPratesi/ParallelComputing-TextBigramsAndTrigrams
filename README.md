@@ -10,6 +10,32 @@ The chosen languages is Java for the sequential version and the Java Thread for 
 
 Notebook plots: https://github.com/LorenzoPratesi/ParallelComputing-TextBigramsAndTrigrams/tree/master/notebook
 
+## Usage
+```
+Options description: 
+	[-p] stands for parallel computing
+	[-s] stands for sequential computing
+	[-pprint] stands for parallel computing with execution print
+	[-sprint] stands for sequential computing with execution print
+  
+Arguments:
+        first arg: describe the n-grams (2 or 3)
+        second arg: describe the number of threads (only available in parallel version)
+  
+Usage: 
+	java TextBigramsAndTrigrams <name> -option <argument> [<optional-argument>]
+   
+Example: 
+	java TextBigramsAndTrigrams text.txt -p 3 8
+	java TextBigramsAndTrigrams text.txt -s 3
+	java TextBigramsAndTrigrams text.txt -s 2
+        java TextBigramsAndTrigrams text.txt -pprint 3 8
+```
+### Example
+```
+java TextBigramsAndTrigrams text.txt -p 3 8
+```
+
 ## Some Benchmarks on a 50kb txt file
 
 ``` 
