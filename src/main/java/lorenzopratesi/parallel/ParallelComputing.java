@@ -5,7 +5,9 @@ import lorenzopratesi.utils.Utils;
 
 import java.util.List;
 import java.util.concurrent.*;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.*;
+
 import java.util.stream.IntStream;
 
 public class ParallelComputing {
@@ -13,7 +15,8 @@ public class ParallelComputing {
     private int numberOfGrams;   // set n_grams
     private int numberOfThreads;  // set threads number
 
-    public ParallelComputing() {}
+    public ParallelComputing() {
+    }
 
     public ParallelComputing(String fileName, int numberOfGrams, int numberOfThreads) {
         this.fileName = fileName;
@@ -21,22 +24,15 @@ public class ParallelComputing {
         this.numberOfThreads = numberOfThreads;
     }
 
-    private void hashMerge(ConcurrentMap<String, Integer> nGrams, ConcurrentMap<String, Integer> finalGrams) {
-        for (ConcurrentMap.Entry<String, Integer> entry : nGrams.entrySet()) {
-            int newValue = entry.getValue();
-            Integer existingValue = finalGrams.get(entry.getKey());
-            if (existingValue != null) {
-                newValue += existingValue;
-            }
-            finalGrams.put(entry.getKey(), newValue);
-        }
+    private void hashMerge(ConcurrentMap<String, Integer> finalGrams, ConcurrentMap<String, Integer> nGrams) {
+        nGrams.forEach((k, v) -> finalGrams.merge(k, v, Integer::sum));
     }
 
     public void run() throws InterruptedException, ExecutionException {
         List<Character> fileString = Utils.readTextFromFile(this.fileName);
 
         long start, end;
-        if(fileString != null) {
+        if (fileString != null) {
             start = System.currentTimeMillis();
 
             ConcurrentMap<String, Integer> finalGrams = parallelWorks(fileString, this.numberOfGrams, this.numberOfThreads);
@@ -62,11 +58,10 @@ public class ParallelComputing {
         double k = Math.floor(fileLen / numberOfThreads);
         futuresList = IntStream.range(0, numberOfThreads)
                 .mapToObj(i -> completionService.submit(instantiateThreads(fileString, numberOfGrams, k, i)))
-                .collect(Collectors.toList());
+                .collect(toList());
 
         for (Future<ConcurrentHashMap<String, Integer>> future : futuresList) {
-            ConcurrentHashMap<String, Integer> grams = future.get();
-            hashMerge(grams, finalGrams);
+            hashMerge(finalGrams, future.get());
         }
 
         awaitTerminationAfterShutdown(executor);
